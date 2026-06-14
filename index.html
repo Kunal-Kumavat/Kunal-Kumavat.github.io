@@ -1,361 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ================================================
+       PAGE META — Update title and description
+       ================================================ -->
+  <title>Kunal Kumavat | Python Developer & GenAI Specialist</title>
+  <meta name="description" content="Python Developer with 3+ years of experience in GenAI, LLMs, RAG pipelines, and Azure Cloud." />
+
+  <!-- Open Graph (social preview) — update image path after adding your photo -->
+  <meta property="og:title"       content="Kunal Kumavat | Python Developer & GenAI Specialist" />
+  <meta property="og:description" content="Building production-grade AI applications. LLMs · RAG · Azure Cloud." />
+  <meta property="og:image"       content="assets/og-preview.png" />  <!-- Replace with your preview image -->
+  <meta property="og:url"         content="https://kunal-kumavat.github.io" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ================================================
+       EmailJS SDK — Required for contact form
+       No changes needed here.
+       ================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Portfolio</span>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="particles" id="particles"></div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="profile-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%23333' stroke='%2300ffff' stroke-width='2'/%3E%3Ctext x='100' y='110' text-anchor='middle' fill='%2300ffff' font-size='16'%3EProfile Image%3C/text%3E%3C/svg%3E" alt="Profile">
-                </div>
-                <h1 class="hero-title">
-                    <span class="typing-text" id="typing-text">Your Name</span>
-                    <span class="cursor">|</span>
-                </h1>
-                <p class="hero-subtitle">Software Engineer</p>
-                <p class="hero-description">Crafting innovative solutions with cutting-edge technology</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+  <!-- ================================================
+       NAVIGATION
+       Update: logo initials, nav links if you rename sections
+       ================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate software engineer with expertise in modern web technologies and a love for creating innovative solutions. With a strong foundation in full-stack development and a keen eye for user experience design.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">✓</div>
-                            <span>5+ years of software development experience</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">✓</div>
-                            <span>Expert in modern JavaScript frameworks</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">✓</div>
-                            <span>Passionate about clean, maintainable code</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">✓</div>
-                            <span>Strong background in system architecture</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- LOGO: Change "KK" to your initials or short name -->
+      <a href="#hero" class="nav-logo">KK<span>.</span></a>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">JavaScript</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90"></div>
-                    </div>
-                    <div class="skill-category">Frontend</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">React</span>
-                        <span class="skill-level">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85"></div>
-                    </div>
-                    <div class="skill-category">Frontend</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Node.js</span>
-                        <span class="skill-level">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="80"></div>
-                    </div>
-                    <div class="skill-category">Backend</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Python</span>
-                        <span class="skill-level">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="75"></div>
-                    </div>
-                    <div class="skill-category">Backend</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">SQL</span>
-                        <span class="skill-level">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="70"></div>
-                    </div>
-                    <div class="skill-category">Database</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">AWS</span>
-                        <span class="skill-level">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="65"></div>
-                    </div>
-                    <div class="skill-category">Cloud</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Docker</span>
-                        <span class="skill-level">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="70"></div>
-                    </div>
-                    <div class="skill-category">DevOps</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Git</span>
-                        <span class="skill-level">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="95"></div>
-                    </div>
-                    <div class="skill-category">Tools</div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- NAV LINKS: Rename or add/remove <li> items as needed -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#award">Award</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Senior Software Engineer</h3>
-                        <h4>Tech Company</h4>
-                        <span class="period">2022 - Present</span>
-                        <p>Led development of scalable web applications using React and Node.js. Implemented microservices architecture and improved system performance by 40%.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Full Stack Developer</h3>
-                        <h4>Startup Inc.</h4>
-                        <span class="period">2020 - 2022</span>
-                        <p>Developed end-to-end solutions using modern web technologies. Collaborated with cross-functional teams to deliver high-quality products.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Junior Developer</h3>
-                        <h4>Web Agency</h4>
-                        <span class="period">2018 - 2020</span>
-                        <p>Started career building responsive websites and learning industry best practices. Gained experience in multiple programming languages and frameworks.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="nav-right">
+        <!-- RESUME DOWNLOAD (navbar):
+             Place your PDF at: assets/Kunal_Kumavat_Resume.pdf
+             The `download` attribute triggers browser download. -->
+        <a href="assets/Kunal_Kumavat_Resume.pdf" download class="btn-resume-nav">
+          ⬇ <span class="label">Resume</span>
+        </a>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23222'/%3E%3Ctext x='150' y='100' text-anchor='middle' fill='%2300ffff' font-size='18'%3EE-Commerce%3C/text%3E%3C/svg%3E" alt="E-Commerce Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">Demo</a>
-                                <a href="#" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23222'/%3E%3Ctext x='150' y='100' text-anchor='middle' fill='%238b5cf6' font-size='18'%3ETask Manager%3C/text%3E%3C/svg%3E" alt="Task Management App">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">Demo</a>
-                                <a href="#" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>Collaborative project management tool with real-time updates, team collaboration features, and analytics dashboard.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23222'/%3E%3Ctext x='150' y='100' text-anchor='middle' fill='%2300ff00' font-size='18'%3EDashboard%3C/text%3E%3C/svg%3E" alt="Data Visualization Dashboard">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">Demo</a>
-                                <a href="#" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Data Visualization Dashboard</h3>
-                        <p>Interactive dashboard for data analysis with charts, filters, and real-time data updates.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Theme toggle — text/icon updated by JS -->
+        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span class="ti" id="themeIc">🌙</span>
+          <span id="themeLbl">Dark</span>
+        </button>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="title-underline"></div>
-                <p class="section-description">I'm always open to discussing new opportunities and interesting projects. Let's connect!</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>your.email@example.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Your City, Country</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            <label for="name">Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                            <label for="message">Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading">Sending...</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <!-- Hamburger (mobile) -->
+        <div class="ham" id="ham" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
         </div>
-    </section>
+      </div>
+    </div>
+  </nav>
 
-    <script src="script.js"></script>
+
+  <!-- ================================================
+       HERO SECTION
+       Update: badge text, name, role, summary, CTA links, stats
+       ================================================ -->
+  <section id="hero">
+    <div class="hero-wrap">
+
+      <!-- AVAILABILITY BADGE: Update status text -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for new opportunities
+      </div>
+
+      <!-- NAME: Update with your full name -->
+      <h1 class="hero-name">Kunal<br><span class="hl">Kumavat</span></h1>
+
+      <!-- ROLE & SPECIALTIES: Update title and tags -->
+      <p class="hero-sub">
+        Python Developer &amp; <strong>GenAI Specialist</strong>
+        &nbsp;·&nbsp; LLMs · RAG Pipelines · Azure Cloud
+      </p>
+
+      <!-- PERSONAL PITCH: 2–3 sentences, your own words -->
+      <p class="hero-p">
+        3+ years crafting production-grade AI applications at Magna Steyr — from LangChain-powered
+        RAG pipelines to Azure-deployed engineering automation. I turn complex, repetitive engineering
+        problems into clean, scalable AI-driven solutions.
+      </p>
+
+      <!-- CTA BUTTONS -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn-p">🚀 View My Work</a>
+        <!-- RESUME DOWNLOAD (hero): same PDF path as nav -->
+        <a href="assets/Kunal_Kumavat_Resume.pdf" download class="btn-dl">⬇ Download Resume</a>
+        <button class="btn-o" onclick="openModal()">✉️ Get In Touch</button>
+      </div>
+
+      <!-- STATS: Update each number and label -->
+      <div class="hero-stats">
+        <div><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+        <div><div class="stat-n">5+</div><div class="stat-l">Production Apps</div></div>
+        <div><div class="stat-n">50K+</div><div class="stat-l">Docs Processed</div></div>
+        <div><div class="stat-n">80%</div><div class="stat-l">Task Reduction</div></div>
+        <div><div class="stat-n">10K+</div><div class="stat-l">Engineers Served</div></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       ABOUT SECTION
+       Update: paragraphs, highlight card headings & descriptions
+       ================================================ -->
+  <section id="about" class="sec-alt">
+    <div class="wrap">
+      <span class="sec-label reveal">About Me</span>
+      <h2 class="sec-title reveal">Turning engineering problems<br>into intelligent solutions</h2>
+
+      <div class="about-grid">
+
+        <!-- ABOUT PARAGRAPHS: Edit to match your voice -->
+        <div class="about-text reveal">
+          <p>I'm a Python Developer based in <strong>Pune, India</strong>, with 3+ years of experience
+          at Magna Steyr building AI-powered applications and automation tools for global engineering teams.</p>
+          <p>My work sits at the intersection of <strong>GenAI</strong>, backend engineering, and cloud
+          infrastructure. I specialize in LLM-based solutions, retrieval-augmented generation (RAG) pipelines,
+          and production REST APIs deployed on <strong>Azure Cloud</strong>.</p>
+          <p>I'm passionate about applying AI to real, repeated problems — not just prototypes. Every tool I
+          ship is measured in time saved, processes eliminated, and engineers unblocked.</p>
+        </div>
+
+        <!-- HIGHLIGHT CARDS: Update icon, heading, and description for each -->
+        <div class="hi-cards reveal">
+          <div class="hi-card">
+            <div class="hi-ic">🤖</div>
+            <div><h4>GenAI & LLM Systems</h4><p>RAG pipelines, LangChain agents, multimodal AI — production-grade, not just proof-of-concepts.</p></div>
+          </div>
+          <div class="hi-card">
+            <div class="hi-ic">☁️</div>
+            <div><h4>Azure Cloud Engineering</h4><p>Full Azure deployments with CI/CD, Entra ID, vector databases, and Blob Storage.</p></div>
+          </div>
+          <div class="hi-card">
+            <div class="hi-ic">⚡</div>
+            <div><h4>API & Automation</h4><p>FastAPI and Flask services that eliminate manual processes — saving hundreds of hours.</p></div>
+          </div>
+          <div class="hi-card">
+            <div class="hi-ic">📊</div>
+            <div><h4>Data & Reporting</h4><p>End-to-end data pipelines, Power BI dashboards with row-level security and scheduled refresh.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SKILLS SECTION
+       Add/remove <span class="tag"> per category.
+       Duplicate a .card block for a new skill category.
+       ================================================ -->
+  <section id="skills">
+    <div class="wrap">
+      <span class="sec-label reveal">Stack</span>
+      <h2 class="sec-title reveal">Skills & Technologies</h2>
+      <p class="sec-sub reveal">Technologies I rely on daily to build reliable, production-ready systems.</p>
+
+      <div class="skills-grid">
+        <!-- LANGUAGES -->
+        <div class="card reveal">
+          <div class="sk-title">Languages</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- FRAMEWORKS & TOOLS -->
+        <div class="card reveal">
+          <div class="sk-title">Frameworks & Tools</div>
+          <div class="tags">
+            <span class="tag">FastAPI</span><span class="tag">Flask</span>
+            <span class="tag">REST API</span><span class="tag">Pydantic</span>
+            <span class="tag">Jinja2</span><span class="tag">Streamlit</span>
+            <span class="tag">Docker</span><span class="tag">Git</span>
+          </div>
+        </div>
+
+        <!-- AI & GENAI -->
+        <div class="card reveal">
+          <div class="sk-title">AI & GenAI</div>
+          <div class="tags">
+            <span class="tag">LangChain</span><span class="tag">LangGraph</span>
+            <span class="tag">RAG</span><span class="tag">MCP</span>
+            <span class="tag">OpenAI API</span><span class="tag">Ollama</span>
+            <span class="tag">Multimodal AI</span><span class="tag">Semantic Search</span>
+            <span class="tag">Vector Embeddings</span><span class="tag">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <!-- DATABASES -->
+        <div class="card reveal">
+          <div class="sk-title">Databases</div>
+          <div class="tags">
+            <span class="tag">PostgreSQL</span><span class="tag">SQLite</span>
+            <span class="tag">MongoDB</span><span class="tag">Qdrant</span>
+            <span class="tag">Cosmos DB</span>
+          </div>
+        </div>
+
+        <!-- AZURE CLOUD -->
+        <div class="card reveal">
+          <div class="sk-title">Azure Cloud</div>
+          <div class="tags">
+            <span class="tag">Web App</span><span class="tag">AI Foundry</span>
+            <span class="tag">Blob Storage</span><span class="tag">SQL Database</span>
+            <span class="tag">Entra ID</span><span class="tag">AI Search</span>
+            <span class="tag">App Registrations</span>
+          </div>
+        </div>
+
+        <!-- DATA & ANALYTICS -->
+        <div class="card reveal">
+          <div class="sk-title">Data & Analytics</div>
+          <div class="tags">
+            <span class="tag">Power BI Desktop</span><span class="tag">Power BI Service</span>
+            <span class="tag">DAX</span><span class="tag">ETL Pipelines</span>
+            <span class="tag">Row-Level Security</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       EXPERIENCE SECTION
+       Add more .tl-item blocks for extra roles/education.
+       ================================================ -->
+  <section id="experience" class="sec-alt">
+    <div class="wrap">
+      <span class="sec-label reveal">Career</span>
+      <h2 class="sec-title reveal">Work Experience</h2>
+      <p class="sec-sub reveal">Building enterprise-grade AI solutions at one of the world's leading automotive engineering companies.</p>
+
+      <div class="timeline">
+
+        <!-- JOB: Update role, date, company, and bullet points -->
+        <div class="tl-item reveal">
+          <div class="tl-head">
+            <span class="tl-role">Associate Engineer</span>         <!-- JOB TITLE -->
+            <span class="tl-date">Mar 2023 – Present</span>         <!-- DATES -->
+          </div>
+          <div class="tl-co">Magna Steyr India, Pune</div>          <!-- COMPANY -->
+          <ul class="tl-list">
+            <li>Developed and maintained 5+ end-to-end web applications in Python — backend logic, API creation, database integration, and front-end templating — deployed to Azure Cloud for global users.</li>
+            <li>Built REST APIs using FastAPI and Flask for 2 client-facing applications; implemented Pydantic for data validation and consistent LLM-generated response formats.</li>
+            <li>Built GenAI features using LLMs, RAG pipelines, and LangChain — document parsing, semantic search, and knowledge-based output generation — achieving 2× efficiency improvement.</li>
+            <li>Built and published Power BI dashboards with row-level security and scheduled refreshes, saving ~3 hours of manual reporting per week across teams.</li>
+            <li>Managed Azure production services — Web App, Blob Storage, SQL Database, Cosmos DB, Qdrant Vector DB, Azure AI Foundry; designed schemas for semantic search across 50,000+ documents.</li>
+            <li>Identified and automated repetitive manual processes, reducing time on recurring tasks by up to 80%.</li>
+          </ul>
+        </div>
+
+        <!-- EDUCATION: Update degree, institution, dates, GPA -->
+        <div class="tl-item reveal">
+          <div class="tl-head">
+            <span class="tl-role">B.E. — Computer Engineering</span>
+            <span class="tl-date">Aug 2019 – Aug 2023</span>
+          </div>
+          <div class="tl-co">D Y Patil School of Engineering and Academy, Pune &nbsp;·&nbsp; CGPA: 8.29 / 10</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       PROJECTS SECTION
+       Duplicate a .proj-card block to add a new project.
+       ================================================ -->
+  <section id="projects">
+    <div class="wrap">
+      <span class="sec-label reveal">Work</span>
+      <h2 class="sec-title reveal">Featured Projects</h2>
+      <p class="sec-sub reveal">Production systems built for real engineering workflows — measured in time saved and impact delivered.</p>
+
+      <div class="proj-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="proj-card reveal">
+          <div class="proj-head">
+            <div class="proj-icon">🔍</div>                         <!-- ICON -->
+            <span class="award-badge">🏆 Awarded</span>            <!-- Remove if no award -->
+          </div>
+          <h3 class="proj-title">AI Conflict Detection System</h3>   <!-- TITLE -->
+          <p class="proj-desc">                                       <!-- DESCRIPTION -->
+            Document comparison engine using LangChain and Azure OpenAI GPT-4 that semantically
+            detects conflicts between engineering specification documents regardless of wording.
+            Classifies into value, implementation, and conceptual types with impact summaries.
+            Extended to flowcharts and architecture diagrams via multimodal AI.
+          </p>
+          <div class="proj-metrics">                                  <!-- METRICS: update values -->
+            <span class="metric">~92% accuracy</span>
+            <span class="metric">500+ doc pairs/month</span>
+            <span class="metric">70% cycle reduction</span>
+            <span class="metric">50+ users</span>
+          </div>
+          <div class="proj-tags">                                     <!-- TECH TAGS -->
+            <span class="ptag">LangChain</span><span class="ptag">Azure OpenAI GPT-4</span>
+            <span class="ptag">Multimodal AI</span><span class="ptag">Azure</span><span class="ptag">Entra ID</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="proj-card reveal">
+          <div class="proj-head"><div class="proj-icon">⚙️</div></div>
+          <h3 class="proj-title">AUTOSAR K-Matrix Representation Portal</h3>
+          <p class="proj-desc">Web portal built with FastAPI that reads ARXML files, parses them into a relational database, and serves data through REST APIs. Converts CAN, LIN, and Ethernet ECU cluster data into AUTOSAR K-Matrix format — replacing a fully manual spreadsheet-based process.</p>
+          <div class="proj-metrics">
+            <span class="metric">10,000+ engineers</span>
+            <span class="metric">2 days → 10 mins</span>
+            <span class="metric">99.5% uptime</span>
+            <span class="metric">1,000+ req/day</span>
+          </div>
+          <div class="proj-tags">
+            <span class="ptag">FastAPI</span><span class="ptag">REST API</span>
+            <span class="ptag">ETL Pipeline</span><span class="ptag">ARXML</span><span class="ptag">AUTOSAR</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="proj-card reveal">
+          <div class="proj-head"><div class="proj-icon">🤖</div></div>
+          <h3 class="proj-title">AI-Powered Engineering Automation Tool</h3>
+          <p class="proj-desc">Intelligent automation tool for creating bounding boxes on 3D part models. Uses a multivision LLM to analyze CAD dimension coordinates and route them to the correct backend REST APIs. Replaced a fully manual repetitive workflow and automated report generation end-to-end.</p>
+          <div class="proj-metrics">
+            <span class="metric">80% effort saved</span>
+            <span class="metric">2× faster</span>
+          </div>
+          <div class="proj-tags">
+            <span class="ptag">Multimodal LLM</span><span class="ptag">REST API</span>
+            <span class="ptag">CAD Automation</span><span class="ptag">Python</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+         AWARD SECTION
+         Update: award title, event, year, description.
+         Replace the cert-placeholder with a real <img> once
+         you have the certification image file.
+         ================================================ -->
+  <section id="award" class="sec-alt">
+    <div class="wrap">
+      <span class="sec-label reveal">Recognition</span>
+      <h2 class="sec-title reveal">Award</h2>
+  
+      <div class="award-banner reveal">
+  
+        <div class="award-left">
+          <div class="award-ic">🏆</div>
+  
+          <img src="assets/cert.jpg" alt="Rising Tech Star Certificate — Magna Technology Day 2025" class="cert-img" />
+        </div>
+  
+        <div class="award-body">
+          <h3>Rising Tech Star — Rank 1</h3>
+          <h4>Magna's Annual Technology Day, 2025</h4>
+          <p> Recognized for developing an AI-powered engineering automation tool — awarded for applying
+            AI capabilities combined with automation to a real, repeated engineering problem and
+            delivering it as a working, production product within the organization.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       CONTACT SECTION
+       Update: heading, intro text, email, LinkedIn, GitHub, phone.
+       ================================================ -->
+  <section id="contact">
+    <div class="wrap">
+      <span class="sec-label reveal">Connect</span>
+      <h2 class="sec-title reveal">Get In Touch</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <h3>Open to exciting opportunities</h3>         <!-- HEADING -->
+          <p>Whether it's a full-time role, freelance project, or just a conversation about AI and
+          engineering — my inbox is always open.</p>      <!-- INTRO TEXT -->
+
+          <div class="c-links">
+            <!-- EMAIL: update address -->
+            <a href="mailto:kumavatkunal1@gmail.com" class="c-link">
+              <div class="c-ic">✉️</div>
+              <div class="c-txt"><span class="c-lbl">Email</span><span class="c-val">kumavatkunal1@gmail.com</span></div>
+            </a>
+            <!-- LINKEDIN: update URL and display text -->
+            <a href="https://www.linkedin.com/in/kunal-kumavat" target="_blank" rel="noopener" class="c-link">
+              <div class="c-ic">💼</div>
+              <div class="c-txt"><span class="c-lbl">LinkedIn</span><span class="c-val">linkedin.com/in/kunal-kumavat</span></div>
+            </a>
+            <!-- GITHUB PORTFOLIO: update URL -->
+            <a href="https://kunal-kumavat.github.io" target="_blank" rel="noopener" class="c-link">
+              <div class="c-ic">🐙</div>
+              <div class="c-txt"><span class="c-lbl">GitHub Portfolio</span><span class="c-val">kunal-kumavat.github.io</span></div>
+            </a>
+            <!-- PHONE: remove this block if you prefer not to show phone number -->
+            <a href="tel:+917249718244" class="c-link">
+              <div class="c-ic">📞</div>
+              <div class="c-txt"><span class="c-lbl">Phone</span><span class="c-val">+91 72497 18244</span></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA CARD: update heading and copy text -->
+        <div class="cta-card reveal">
+          <div>
+            <h3>Have a project in mind?</h3>
+            <p>I'm always interested in challenges at the intersection of AI, automation, and real engineering
+            impact. Drop me a message or grab my resume.</p>
+          </div>
+          <div class="cta-btns">
+            <button class="btn-w" onclick="openModal()">✉️ Send a Message</button>
+            <!-- RESUME DOWNLOAD (contact): update href -->
+            <a href="assets/Kunal_Kumavat_Resume.pdf" download class="btn-dl-white">⬇ Resume</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+       Update: name, year, and GitHub Pages URL
+       ================================================ -->
+  <footer>
+    <p>
+      © 2025 <a href="#hero">Kunal Kumavat</a>
+      &nbsp;·&nbsp; Built with HTML, CSS &amp; JavaScript
+      &nbsp;·&nbsp; <a href="https://kunal-kumavat.github.io" target="_blank">kunal-kumavat.github.io</a>
+    </p>
+  </footer>
+
+
+  <!-- ================================================
+       CONTACT FORM MODAL POPUP
+       ================================================ -->
+  <div class="modal-overlay" id="modalOverlay" onclick="overlayClick(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Send me a message</h3>
+      <!-- MODAL SUB: update email address -->
+      <p class="modal-sub">I'll reply to <strong>kumavatkunal1@gmail.com</strong> within 24 hours.</p>
+
+      <form id="contactForm" onsubmit="sendEmail(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="from_name">Your Name</label>
+            <input type="text" id="from_name" name="from_name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="reply_to">Your Email</label>
+            <input type="email" id="reply_to" name="reply_to" placeholder="jane@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project idea / Collaboration / Opportunity…" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Describe your idea, project, or what you'd like to discuss…" required></textarea>
+        </div>
+        <button type="submit" class="btn-send" id="sendBtn">
+          <span id="sendBtnText">Send Message ✉️</span>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Site JavaScript — loaded last for performance -->
+  <script src="js/script.js"></script>
+
 </body>
 </html>
