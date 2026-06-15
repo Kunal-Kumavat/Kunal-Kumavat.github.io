@@ -82,10 +82,10 @@
     <div class="hero-wrap">
 
       <!-- AVAILABILITY BADGE: Update status text -->
-      <div class="hero-badge">
+      <!-- <div class="hero-badge">
         <span class="badge-dot"></span>
         Available for new opportunities
-      </div>
+      </div> -->
 
       <!-- NAME: Update with your full name -->
       <h1 class="hero-name">Kunal<br><span class="hl">Kumavat</span></h1>
@@ -382,13 +382,13 @@
       <div class="award-banner reveal">
   
         <div class="award-left">
-          <div class="award-ic">🏆</div>
-  
-          <img src="assets/cert.jpg" alt="Rising Tech Star Certificate — Magna Technology Day 2025" class="cert-img" />
+          <button class="cert-thumb-btn" type="button" aria-label="Open certificate in full view">
+            <img src="assets/cert.png" alt="Rising Tech Star Certificate — Magna Technology Day 2025" class="cert-img" />
+          </button>
         </div>
   
         <div class="award-body">
-          <h3>Rising Tech Star — Rank 1</h3>
+          <h3>🏆 Rising Tech Star — Rank 1</h3>
           <h4>Magna's Annual Technology Day, 2025</h4>
           <p> Recognized for developing an AI-powered engineering automation tool — awarded for applying
             AI capabilities combined with automation to a real, repeated engineering problem and
@@ -405,6 +405,13 @@
        CONTACT SECTION
        Update: heading, intro text, email, LinkedIn, GitHub, phone.
        ================================================ -->
+  <div class="cert-popup-overlay" id="certPopupOverlay" aria-hidden="true">
+    <div class="cert-popup" role="dialog" aria-modal="true" aria-label="Certificate preview">
+      <button class="cert-popup-close" id="certPopupClose" type="button" aria-label="Close certificate preview">✕</button>
+      <img src="assets/cert.png" alt="Rising Tech Star Certificate — Magna Technology Day 2025" class="cert-popup-image" />
+    </div>
+  </div>
+
   <section id="contact">
     <div class="wrap">
       <span class="sec-label reveal">Connect</span>

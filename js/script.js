@@ -106,6 +106,22 @@
       4. MODAL — OPEN / CLOSE / KEYBOARD
       ==================================================== */
    
+   const certPopupOverlay = document.getElementById('certPopupOverlay');
+
+   function openCertPopup() {
+     if (!certPopupOverlay) return;
+     certPopupOverlay.classList.add('open');
+     certPopupOverlay.setAttribute('aria-hidden', 'false');
+     document.body.style.overflow = 'hidden';
+   }
+
+   function closeCertPopup() {
+     if (!certPopupOverlay) return;
+     certPopupOverlay.classList.remove('open');
+     certPopupOverlay.setAttribute('aria-hidden', 'true');
+     document.body.style.overflow = '';
+   }
+
    /** Open the contact form modal and lock body scroll. */
    function openModal() {
      document.getElementById('modalOverlay').classList.add('open');
@@ -128,6 +144,23 @@
      }, 300);
    }
    
+   const certThumbBtn = document.querySelector('.cert-thumb-btn');
+   const certPopupClose = document.getElementById('certPopupClose');
+
+   if (certThumbBtn) {
+     certThumbBtn.addEventListener('click', openCertPopup);
+   }
+
+   if (certPopupClose) {
+     certPopupClose.addEventListener('click', closeCertPopup);
+   }
+
+   if (certPopupOverlay) {
+     certPopupOverlay.addEventListener('click', e => {
+       if (e.target === certPopupOverlay) closeCertPopup();
+     });
+   }
+
    /**
     * Handle clicks on the dark overlay behind the modal.
     * Clicking outside the modal box closes it.
@@ -139,9 +172,17 @@
      }
    }
    
-   // Close modal when user presses the Escape key
+   // Close modal / certificate popup when user presses the Escape key
    document.addEventListener('keydown', e => {
-     if (e.key === 'Escape') closeModal();
+     if (e.key !== 'Escape') return;
+
+     if (document.getElementById('modalOverlay').classList.contains('open')) {
+       closeModal();
+     }
+
+     if (certPopupOverlay && certPopupOverlay.classList.contains('open')) {
+       closeCertPopup();
+     }
    });
    
    
